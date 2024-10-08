@@ -13,6 +13,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   max-width: 1440px;
 }
 
@@ -20,7 +22,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: #f7f7ff;
-  /* overflow: hidden; */
+  position: relative;
+  overflow: hidden;
 }
 
 .pricing-container::before {
@@ -31,8 +34,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  background-position: top right;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 
 .pricing-container::after {
@@ -44,6 +47,7 @@ body {
   left: 0;
   bottom: 0;
   background-repeat: no-repeat;
+  background-position: bottom left;
   overflow: hidden;
 }
 
@@ -55,6 +59,7 @@ body {
   align-items: center;
   gap: 3rem;
   padding-top: 40px;
+  overflow: hidden;
 }
 
 .plan {
@@ -272,7 +277,7 @@ body {
   z-index: 100;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 930px) {
   .cards {
     gap: 20px;
   }
@@ -289,6 +294,11 @@ body {
 }
 
 @media screen and (max-width: 375px) {
+  .pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .cards {
     gap: 30px;
   }
@@ -319,8 +329,8 @@ body {
   .pricing-container::before {
     width: 300px;
     height: 600px;
-    top: 0;
-    right: -150px;
+    background-position: top right;
+    right: -200px;
   }
   .pricing-container::after {
     content: "";
